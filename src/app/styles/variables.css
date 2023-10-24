@@ -1,0 +1,23 @@
+:root {
+    --body-background-color: #012E40;
+    --settings-background-color: #e5cbb3;
+    --settings-background-color-light:#F2E3D5;
+    --settings-input-color: #012E40;
+    --primary-text-color: #F2E3D5;
+    --primary-color: #012E40;
+    --secondary-color: #024959;
+    --third-color: #F2E3D5;
+    --light-dark-blue: #026773;
+    --green-color: #3CA6A6;
+    --darker-yellow: #e5cbb3;
+
+    --standard-border-radius: .4rem;
+
+    --standard-margin-top: 8rem;
+    --standard-margin-top-phone: 6rem;
+
+    --standard-width: 95%;
+    --standard-max-width: 35rem;
+
+    --cross-size: 1.5rem;
+}

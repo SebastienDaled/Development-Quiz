@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.typekit.net/meu1cft.css">
+  <link rel="stylesheet" href="./app/styles/styles.css">
+  <title>Develompment Quiz</title>
+</head>
+<body>
+  <div id="app">
+
+    <div id="settings" class="settings">
+      <table class="settings__table">
+        <tr>
+          <td>
+            <h1>Development Quiz</h1>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="difficulty">Choose your difficulty*</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select name="difficulty" id="difficulty" class="settings-items settings__dif">
+              <option disabled selected>-- select difficulty --</option>
+              <option value="easy">easy</option>
+              <option value="medium">medium</option>
+              <option value="hard">hard</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="category">Choose your categorie*</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select name="category" id="category" class="settings-items settings__cat">
+              <option disabled selected>-- select a categorie --</option>
+              <option value="linux">Linux</option>
+              <option value="bash">Bash</option>
+              <option value="uncategorized">Uncategorized</option>
+              <option value="docker">Docker</option>
+              <option value="sql">SQL</option>
+              <option value="cms">CMS</option>
+              <option value="code">Code</option>
+              <option value="devops">DevOps</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="limit">Choose your limit*</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="number" placeholder="choose the limit of questions you want (1 - 20)" id="limit" class="settings-items settings__input" min="1" max="20">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="settingsBtn" class="settings-items settings__btn">Start</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="preResultsBtn" class="preResults">See previous results</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <section id="cards" class="cards hide">
+      <h1 class="small">Development Quiz</h1>
+      <div id="timerContainer" class="timerContainer">
+        <div id="timer" class="timer timer-full">
+          <div id="timerTimed" class="timer timer-timed"></div>
+        </div>
+        <div class="timer-text">
+          <span id="time" class="timer__time">5</span>
+        </div>
+      </div>
+
+      <div class="functionality">
+        <h2>Question <span id="tracker"></span></h2>
+        <div class="quit">
+          <div class="cross1"></div>
+          <div class="cross2"></div>
+        </div>
+      </div>
+
+      <div id="question"></div>
+
+      <div id="answers" class="cards__answer"></div>
+
+      <p id="count"></p>
+      <div id="confirm">
+        <button id="next" class="cards__btn">Next</button>
+      </div>
+    </section>
+
+    <section id="results" class="hide">
+      <h1 class="small">Development Quiz</h1>
+      <div class="results__title">
+        <h2>Results</h2>
+        
+        <div class="quit">
+          <div class="cross1"></div>
+          <div class="cross2"></div>
+        </div>
+      </div>
+      <div class="results__info">
+        <div id="procent" class="procentBar procentFull">
+          <div id="mesure" class="procentBar procentFiller"></div>
+        </div>
+        <span id="procentcount">100%</span>
+        <p class="time"><span id="usedTime">1min35sec</span></p>
+      </div>
+
+      <div id="resultsAnswer"></div>
+    </section>
+
+    <section id="preResults" class="hide">
+      <h1 class="small">Development Quiz</h1>
+
+      <div class="preResultsContainer">
+        <div class="preResults__title">
+          <h2>Previous results</h2>
+          <div class="quit">
+            <div class="cross1"></div>
+            <div class="cross2"></div>
+          </div>
+        </div>
+        <div class="preTitles">
+          <div class="titleDate">
+            <p>date</p>
+          </div>
+          <div class="titleDif">
+            <p>difficulty</p>
+          </div>
+          <div class="titleCat">
+            <p>categorie</p>
+          </div>
+          <div class="titleAmount">
+            <p>amount</p>
+          </div>
+          <div class="title score">
+            <p>score</p>
+          </div>
+        </div>
+
+        <div id="previousresult" class="previousresult"></div>
+        <button id="deleteBtn" class="deleteBtn">delete Previous results</button>
+      </div>
+     
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2022 Sebastien Daled-Rosseel All rights reserved.</p>
+  </footer>
+  <script type="module" src="./app/app.js"></script>
+</body>
+</html>

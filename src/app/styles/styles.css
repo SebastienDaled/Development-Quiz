@@ -1,0 +1,385 @@
+/* Import Vendor
+   ------------------------------------------------------------------------- */
+   @import './normalize.css';
+
+/* Import App Styles
+   ------------------------------------------------------------------------- */
+   @import './variables.css';
+   @import './app.css';
+
+/* classes needed in js ------------------------------------------------------------ 1: js */
+.hide {
+   display: none;
+}
+
+
+/* general styles ------------------------------------------------------------ 2: general */
+.cross1, .cross2{
+   width: .2rem;
+   height: var(--cross-size);
+   border-radius: 10px;
+   background-color: var(--darker-yellow);
+   position: absolute;
+   left: 0.65rem;
+   transform: rotate(-45deg);
+}
+.cross2{
+   transform: rotate(45deg);
+}
+.quit {
+   cursor: pointer;
+   transition: .2s;
+   position: relative;
+   width: var(--cross-size);
+   height: var(--cross-size);
+   transform-origin: center;
+}
+.quit:hover{
+   transform: rotate(180deg) scale(.7);
+}
+
+
+
+/* question cards styles ------------------------------------------------------------ 3: question */
+.functionality{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 1.5rem;
+   margin-top: 6rem;
+}
+#question {
+   margin-bottom: 1.5rem;
+   color: var(--third-color);
+}
+h2 {
+   color: var(--darker-yellow);
+   margin: 0;
+}
+
+.timerContainer {
+   position: relative;
+   margin-bottom: 4rem;
+}
+
+.timer, .timer-text{
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.timer {
+   width: 100%;
+   height: 3rem;
+}
+.timer-full {
+   background: var(--secondary-color);
+   border-radius: 2rem;
+   border: 2px solid var(--darker-yellow);
+   overflow: hidden;
+}
+.timer-timed{
+   transform-origin: left;
+   transition: top 10s ease-out;
+   transform: scaleX(0);
+   background: var(--darker-yellow);
+}
+.timer-text {
+   background: none;
+   top: .9375rem;
+   left: .7rem;
+   color: var(--primary-color);
+}
+
+.cards {
+   width: var(--standard-width);
+   max-width: var(--standard-max-width);
+   color: var(--primary-text-color);
+   margin-top: var(--standard-margin-top);
+}
+.answer, .answerResult {
+   margin-left: 0;
+   list-style-type: none;
+   border: 2px solid var(--secondary-color);
+   border-radius: var(--standard-border-radius);
+   background: var(--primary-color);
+   color: var(--third-color);
+   padding: .5rem .2rem .5rem .5rem;
+   text-align: left;
+   margin-bottom: 1rem;
+   display: block;
+   width: 100%;
+}
+.answer {
+   cursor: pointer;
+}
+.answer{
+   padding-left: 1rem;
+}
+.answer:hover {
+   transition: .2s;
+   transform: scale(1.05);
+}
+.answer:focus {
+   background-color: #026773;
+}
+.answer:active{
+   transition: .2s;
+   transform: scale(.95);
+   background-color: var(--light-dark-blue);
+}
+.cards__btn {
+   width: 100%;
+   padding: .8rem .2rem;
+   background-color: var(--secondary-color);
+   border: none;
+   border-radius: var(--standard-border-radius);
+   color: var(--primary-text-color);
+   cursor: pointer;
+}
+
+
+/* results styles ------------------------------------------------------------ 4: results */
+#results {
+   margin-top: var(--standard-margin-top);
+   width: var(--standard-width);
+   max-width: var(--standard-max-width);
+}
+#resultsAnswer{
+   padding-bottom: 7rem;
+}
+.resultCard {
+   margin-bottom: 3rem;
+   width: 100%;
+}
+.notAnswered::after {
+   content: " (Je hebt hier niks aangeduid)";
+   font-size: .8rem;
+   font-weight: 200;
+   color: rgb(210, 181, 125);
+}
+.results__info, .results__title, .preResults__title{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.results__title {
+   margin-bottom: 1rem;
+}
+.results__info{
+   margin-bottom: 3rem;
+}
+.procentBar{
+   box-sizing: content-box;
+   width: 100%;
+   height: 3rem;
+}
+.procentFull {
+   border: .125rem solid var(--light-dark-blue);
+   border-radius: var(--standard-border-radius);
+   margin-right: 1rem;
+   flex-grow: 1;
+   position: relative;
+   overflow: hidden;
+}
+.procentFiller{
+   position: absolute;
+   background-color: var(--green-color);
+   transform-origin: left;
+   height: 3rem;
+   align-items: center;
+   transition: 1s;
+   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#procentcount {
+   position: absolute;
+   margin-left: 1rem;
+}
+.time{
+   width: 15%;
+   text-align: center;
+}
+/* settings styles ------------------------------------------------------------ 5: settings */
+h1{
+   text-align: center;
+   margin-bottom: 2rem;
+   font-size: 2.5rem;
+   color: var(--settings-background-color);
+   text-transform: uppercase;
+   width: 100%;
+   padding: 2.6rem 0 3rem 0;
+   background:
+    linear-gradient(to right, var(--darker-yellow) 4px, transparent 4px) 0 0,
+    linear-gradient(to right, var(--darker-yellow) 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, var(--darker-yellow) 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, var(--darker-yellow) 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, var(--darker-yellow) 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, var(--darker-yellow) 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, var(--darker-yellow) 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, var(--darker-yellow) 4px, transparent 4px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+.small {
+   text-align: center;
+   margin-bottom: 2rem;
+   font-size: 2rem;
+   color: var(--secondary-color);
+   text-transform: uppercase;
+   width: 100%;
+   padding: .5rem 0 .9rem 0;
+   background:
+    linear-gradient(to right, var(--secondary-color) 4px, transparent 4px) 0 0,
+    linear-gradient(to right, var(--secondary-color) 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, var(--secondary-color) 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, var(--secondary-color) 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, var(--secondary-color) 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, var(--secondary-color) 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, var(--secondary-color) 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, var(--secondary-color) 4px, transparent 4px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+.settings{
+   width: 100%;
+   margin-top: var(--standard-margin-top);
+   color: var(--primary-text-color);
+}
+.settings__table{
+   width: var(--standard-width);
+   max-width: var(--standard-max-width);
+   margin: 0 auto;
+}
+.settings-items{
+   width: 100%;
+   padding: .5rem .2rem .5rem .5rem;
+   border-radius: var(--standard-border-radius);
+   border: none;
+   background-color: var(--settings-background-color-light);
+   color: var(--settings-input-color);
+   margin-bottom: 1rem;
+   font-size: 1rem;
+}
+.settings__btn {
+   cursor: pointer;
+   background-color: var(--settings-background-color);
+   margin-top: .5rem;
+   margin-bottom: 0;
+}
+.settings__btn:hover{
+   transition: .5s;
+   transform: scaleX(1.02);
+   color: var(--settings-background-color);
+   background-color: var(--secondary-color);
+}
+.settings__btn:active{
+   transition: .2s;
+   transform: scaleX(1);
+}
+input, select{
+   margin-top: .5rem;
+}
+select{
+   height: 2.375rem;
+}
+/* footer style */
+footer {
+   position: fixed;
+   bottom: 0;
+   right: .7rem;
+   color: var(--secondary-color);
+   font-size: .7rem;
+}
+
+/* .multiple{
+   background-color: red; 
+} */
+.multipleChoiceQuestion::after{
+   content: ' (Multiple answers are correct here)';
+   margin-left: .7rem;
+   font-size: .7rem;
+   color: var(--settings-background-color);
+}
+.preResults{
+   cursor: pointer;
+   color: var(--third-color);
+   border: none;
+   background: none;
+   text-decoration: underline;
+}
+.preResults:hover{
+   transition: .5s;
+   color: var(--green-color);
+   transform: scale(1.05);
+}
+
+/* previous results styles ------------------------------------------------------------ 6: previous */
+#preResults {
+   margin-top: var(--standard-margin-top);
+   width: var(--standard-width);
+   max-width: var(--standard-max-width);
+}
+.preTitles, .previousresult>div {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.preTitles{
+   border-bottom: 2px solid var(--third-color);
+}
+.previousresult>div{
+   text-align: center;
+   margin-left: 0;
+}
+.preTitles div, .previousresult div div {
+   text-align: center;
+   flex-grow: 1;
+   width: 20%;
+}
+.borderForResults{
+   border-bottom: 1.5px solid var(--secondary-color);
+}
+.nothing {
+   border: none;
+   text-align: center;
+   width: 100%;
+   color: var(--secondary-color);
+}
+.nothing p{
+   width: 100%;
+   font-size: 2rem;
+   border: none;
+}
+.preResults__title{
+   margin-bottom: 1rem;
+}
+.deleteBtn{
+   cursor: pointer;
+   width: 40%;
+   max-width: 200px;
+   margin: 10px 0 0 auto;
+   text-align: center;
+   border: none;
+   padding: .5rem 0;
+   background-color: rgb(205, 8, 8);
+   color: var(--third-color);
+   border-radius: var(--standard-border-radius);
+}
+.deleteBtn:hover{
+   transition: .5s;
+   transform: scale(1.05);
+}
+@media only screen and (max-width: 450px) {
+   .settings {
+      margin-top: var(--standard-margin-top-phone);
+   }
+   h1 {
+      height: 6rem;
+      font-size: 2rem;
+      padding: 1.5rem 0 0 0;
+   }
+   .small {
+      padding: 1.5rem 0 0 0;
+   }
+ }
